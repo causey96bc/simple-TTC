@@ -1,0 +1,72 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+:root {
+  --cell-size: 200px;
+  --mark-size: 80px;
+}
+body {
+  margin: 0;
+}
+
+.board {
+  display: grid;
+  align-self: center;
+  height: 100vh;
+  width: 100vh;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+}
+
+.cells {
+  cursor: pointer;
+  position: relative;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 1px solid black;
+}
+.cells:first-child,
+.cells:nth-child(2),
+.cells:nth-child(3) {
+  border-top: none;
+}
+
+.cells:nth-child(3n + 1) {
+  border-left: none;
+}
+
+.cells:nth-child(3n + 3) {
+  border-right: none;
+}
+
+.cells:last-child,
+.cells:nth-child(8),
+.cells:nth-child(7) {
+  border-bottom: none;
+}
+
+.cells:hover {
+  background-color: lightblue;
+  opacity: 0.5;
+}
+
+.X {
+  background-image: url("x.png");
+}
+
+.O {
+  background-image: url("circle.png");
+}
+
+.X:hover {
+  background-image: url("x.png");
+}
+
+.O:hover {
+  background-image: url("circle.png");
+}
